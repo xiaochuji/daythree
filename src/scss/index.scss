@@ -1,0 +1,21 @@
+@import "common.scss";
+.box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    header{
+        width: 100%;
+        height: pxTorem(44px);
+        border-bottom: pxTorem(1px) solid #ccc;
+    }
+    section{
+        width: 100%;
+        flex: 1;
+    }
+    footer{
+        width: 100%;
+        height: pxTorem(44px);
+        border-top: pxTorem(1px) solid #ccc;
+    }
+}
