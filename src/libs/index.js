@@ -1,0 +1,20 @@
+require.config({
+    paths:{
+        'swiper':"./swiper",
+        'fle':"./flexible",
+        "jquery":"./jquery-3.3.1"
+    }
+})
+require(['swiper','fle',"jquery"],function(Swiper,fle,$){
+    var mySwiper = new Swiper(".swiper-content",{
+        autoplay:true,
+        loop:true
+    })
+    $.ajax({
+        url:"/api/file",
+        dataType:"json",
+        success:function(data){
+            console.log(data)
+        }
+    })
+})

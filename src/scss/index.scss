@@ -8,14 +8,206 @@
         width: 100%;
         height: pxTorem(44px);
         border-bottom: pxTorem(1px) solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: pxTorem(0px) pxTorem(10px);
+        box-sizing: border-box;
+        background: #1b1a1f;
+        span{
+            font-size: pxTorem(18px);
+            color: #fff;
+        }
     }
     section{
         width: 100%;
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        p{
+            width: 100%;
+            height: pxTorem(20px);
+            background: #333;
+            display: flex;
+            align-items: center;
+            span:nth-child(1){
+                margin-left: pxTorem(20px);
+                display: inline-block;
+                width: pxTorem(5px);
+                height: pxTorem(5px);
+                background: #fff;
+            }
+            span{
+                font-size: pxTorem(5px);
+                color: #fff;
+            }
+            span:nth-child(2){
+                margin-left: pxTorem(5px);
+            }
+        }
+        .top{
+            width: 100%;
+            height: pxTorem(50px);
+            padding: pxTorem(5px);
+            box-sizing: border-box;
+            display: flex;
+            .top-left{
+                width: pxTorem(40px);
+                height: 100%;
+                background: blue;
+            }
+            .top-right{
+                flex: 1;
+                height: 100%;
+                margin-left: pxTorem(10px);
+                display: flex;
+                justify-content: space-between;
+                .right-left{
+                    width: 80%;
+                    height: 100%;
+                    font-size: pxTorem(5px);
+                    h4{
+                        font-size: pxTorem(8px);
+                        font-weight: bolder
+                    }
+                }
+                .right-right{
+                    flex: 1;
+                    height: 100%;
+                    dl{
+                        width: 100%;
+                        height: 100%;
+                        dt{
+                            width: pxTorem(20px);
+                            height: pxTorem(20px);
+                        }
+                        dd{
+                            font-size: pxTorem(5px);
+                        }
+                    }
+                }
+            }
+        }
+        .banner{
+            width: 100%;
+            height: pxTorem(100px);
+            overflow: hidden;
+            .swiper-content{
+                width: 100%;
+                height: 100%;
+                .swiper-wrapper{
+                    width: 100%;
+                    height: 100%;
+                    .swiper-slide{
+                        width: 100%;
+                        height: 100%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .list{
+            width: 100%;
+            height: pxTorem(40px);
+            ul{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: pxTorem(1px) solid #ccc;
+                li{
+                    width: 33.3%;
+                    height: 100%;
+                    text-align: center;
+                    font-size: pxTorem(14px);
+                    line-height: pxTorem(40px);
+                }
+            }
+        }
+        .count{
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            dl{
+                width: 50%;
+                height: 50%;
+                padding: pxTorem(10px);
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                dt{
+                    width: 100%;
+                    height: 59%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                dd{
+                    width: 100%;
+                    flex: 1;
+                    ul{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        li:nth-child(1){
+                            width: 100%;
+                            h4{
+                                font-size: pxTorem(9px);
+                            }
+                        }
+                        li:nth-child(2){
+                            width: 100%;
+                            flex: 1;
+                            display: flex;
+                            justify-content: space-between;
+                            dl{
+                                width: pxTorem(100px);
+                                height: 100%;
+                                font-size: pxTorem(5px);
+                            }
+                            div{
+                                width: pxTorem(40px);
+                                height: pxTorem(40px);
+                                background: #5adad0;
+                                color: #fff;
+                                font-size: pxTorem(5px);
+                                text-align: center;
+                                line-height: pxTorem(40px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     footer{
         width: 100%;
         height: pxTorem(44px);
         border-top: pxTorem(1px) solid #ccc;
+        display: flex;
+        padding: pxTorem(5px);
+        box-sizing: border-box;
+        dl{
+            width: 33.3%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            dt{
+                width: 26%;
+                height: 100%;
+                background: #000;
+                margin-left: 36%;
+            }
+            dd{
+                font-size: pxTorem(6px);
+                text-align: center;
+            }
+        }
     }
 }
