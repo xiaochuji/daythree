@@ -34,7 +34,6 @@ gulp.task("server",function(){
                livereload:true,
                middleware:function(req,res,next){
                    var pathname = url.parse(req.url).pathname;
-                   console.log(pathname)
                    if(pathname == '/favicon.ico'){
                        res.end()
                        return
@@ -52,5 +51,37 @@ gulp.task("server",function(){
 gulp.task("watch",function(){
     gulp.watch("./src/scss/*.scss",gulp.series("sass",'concat'))
 })
-
 gulp.task("default",gulp.series("sass",'concat',"watch"))
+
+//压缩html
+gulp.task("minhtml",function(){
+    return gulp.src("./src/*.html")
+           .pipe(htmlmin({
+               collapseWhitespace:true
+           }))
+           .pipe(gulp.dest("./list"))
+})
+
+//压缩css
+gulp.task('clean',function(){
+    return gulp.src("./src/css/*.css") 
+          .pipe(concat("all.css"))
+          .pipe(clean())
+          .pipe(gulp.dest("./list/css"))
+})
+
+gulp.task("clonejs",function(){
+    return gulp.src("./src/libs/*.js")
+           .pipe(gulp.dest("./list/libs"))
+})
+
+//压缩img
+gulp.task("imgmin",function(){
+    return gulp.src("./src/img/*.{jpg,png,gif}")
+           .pipe(imgmin({
+                optimizationLevel: 5
+           }))
+           .pipe(gulp.dest("./list/img"))
+})
+
+gulp.task("over",gulp.series("minhtml","clean","imgmin","clonejs"))
